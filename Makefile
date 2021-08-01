@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: gnuplot-cairolatex.pdf pgfplots-1.pdf pgfplots-2.pdf pgfplots-3.pdf pgfplots-snowman.pdf
+all: gnuplot-cairolatex.pdf pgfplots-lualatex-simple.pdf pgfplots-lualatex-tikz.pdf pgfplots-lualatex-tikz2.pdf pgfplots-lualatex-snowman.pdf
 
 gnuplot-cairolatex.pdf: gnuplot-cairolatex.tex gnuplot-cairolatex-inc.pdf
 	lualatex --shell-escape $<
