@@ -11,7 +11,7 @@ gnuplot-cairolatex.tex: gnuplot-cairolatex.gp
 pgfplots-%.pdf: pgfplots-%.tex
 	lualatex --shell-escape $<
 
-GENERATED_FILES := *.aux *.fdb_latexmk *.fls *.log *.pgf-plot.*
+GENERATED_FILES := *.aux *.fdb_latexmk *.fls *.log *.pgf-plot.* *.synctex.gz
 GENERATED_FILES += gnuplot-cairolatex.pdf gnuplot-cairolatex.tex gnuplot-cairolatex-inc.pdf
 GENERATED_FILES += pgfplots-*.pdf
 
