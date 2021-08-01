@@ -1,0 +1,35 @@
+% !TEX TS-program = lualatex
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\tikzset{% スタイルの作成
+  pointtype triangle/.style={mark=triangle*,mark size=4pt},
+  every mark/.style={fill=white,solid}
+}
+\pgfplotsset{% グラフ全体の見た目の設定
+  compat=1.17,
+  major tick length=0.2cm,
+  minor tick length=0.1cm,
+  every axis/.style={semithick},
+  tick style={semithick,black},
+}
+\begin{document}
+\begin{tikzpicture}[thick]
+\begin{semilogyaxis}[% パラメータなどの設定
+  width=85mm, height=65mm,
+  domain=0:40,
+  xmin=0, xmax=40,
+  ymin=1e-5, ymax=1,
+  minor x tick num=1,
+  xlabel={Avarage CNR $\Gamma$ [dB]},
+  ylabel={Bit Error Rate},
+  legend entries={Theory,Simulation},
+  legend style={draw=none,fill=none},
+]
+  % 理論特性
+  \addplot[smooth] gnuplot {(1-1/sqrt(1+2/(10**(x/10))))/2};
+
+  % 復調特性
+  \addplot[sharp plot,pointtype triangle,dashed,red] table {data.txt};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

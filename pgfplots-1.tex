@@ -1,0 +1,25 @@
+% !TEX TS-program = lualatex
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{
+  compat=1.17,
+  major tick length=0.2cm,
+  minor tick length=0.1cm,
+}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+  width=85mm, height=65mm,
+  domain=0:40,
+  xmin=0, xmax=40,
+  ymin=1e-5, ymax=1,
+  minor x tick num=1,
+  xlabel={Avarage CNR $\Gamma$ [dB]},
+  ylabel={Bit Error Rate},
+  legend entries={Theory,Simulation},
+]
+  \addplot[smooth] gnuplot {(1-1/sqrt(1+2/(10**(x/10))))/2};
+  \addplot[sharp plot,red,mark=triangle*] table {data.txt};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}
