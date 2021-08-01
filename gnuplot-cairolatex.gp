@@ -9,7 +9,7 @@ set xrange [0:40]; set yrange [1e-5:1]
 set xtics 10 scale 2,1; set ytics scale 2,1 add ("1" 1)
 set mxtics 2; set mytics 10
 set format y "$10^{%L}$"
-set xlabel "Avarage CNR [dB]"; set ylabel "Bit Error Rate"
+set xlabel "Average CNR [dB]"; set ylabel "Bit Error Rate"
 
 set label 1 "\\footnotesize\\begin{tabular}{l}QPSK\\\\Rayleigh fading\\\\Perfect channel estimation\\end{tabular}" at 2,6e-5 left
 
