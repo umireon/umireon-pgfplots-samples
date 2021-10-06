@@ -24,8 +24,8 @@
   },
   log number format basis/.code 2 args={
     \pgfmathsetmacro\e{#2}
-    \pgfmathparse{#2==0}\ifnum\pgfmathresult>0{1}\else
-    \pgfmathparse{#2==1}\ifnum\pgfmathresult>0{10}\else
+    \pgfmathparse{\e==0}\ifnum\pgfmathresult>0{1}\else
+    \pgfmathparse{\e==1}\ifnum\pgfmathresult>0{10}\else
     {$#1^{\pgfmathprintnumber{\e}}$}\fi\fi},
 }
 \begin{document}
